@@ -32,11 +32,11 @@ class Access extends CI_Controller {
                           'is_logged_in' => 1
                           );
             $this->session->set_userdata($data);
-            redirect('');
+            redirect();
         }
         else
         {
-            //$this->load->view('account/login');
+            $this->load->view('account/login');
         }
     }
     

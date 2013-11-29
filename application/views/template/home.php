@@ -34,12 +34,24 @@
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
         */
+        
+        <?php
+        
+        foreach($advisories as $advs)
+        {
+            echo
+            '
+            L.marker(['.$advs['longitude'].', '.$advs['latitude'].']).addTo(map)
+                .bindPopup("<h1> '.$advs['description'].' </h1>")
+                .openPopup();
+            ';
+        }
+        ?>
+        
         // add a marker in the given location, attach some popup content to it and open the popup
         L.marker([7.078486, 125.603085]).addTo(map)
             .bindPopup('<h1>Welcome to<br>Davao City!</h1>')
             .openPopup();
-        
-        
-
+            
     </script>
 

@@ -57,6 +57,30 @@ class CI_Controller {
 	{
 		return self::$instance;
 	}
+	
+	public function footer_access()
+	{
+	    if($this->session->userdata('is_logged_in') == 1)
+	    {
+		$data = array('src' => 'logout', 'access' => 'Log Out');
+		return $data;
+	    }
+	    else
+	    {
+		$data = array('src' => 'login', 'access' => 'Log In');
+		return $data;
+	    }
+	}
+	
+	public function header_access()
+	{
+	    if($this->session->userdata('is_logged_in') == 1 )
+	    {
+		$x = $this->access_model->get_info();
+		//$data = array('fname' => $x['fname'], 'lname' => $x['lname']);
+		return $x;
+	    }
+	}
 }
 // END Controller class
 

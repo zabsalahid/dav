@@ -44,5 +44,11 @@ class Access_model extends CI_Model {
             return $query->row_array();
         }
     }
+    
+    public function get_all_admins()
+    {
+        $query = $this->db->get('users');
+        return $query->result_array();
+    }
 }
 ?>

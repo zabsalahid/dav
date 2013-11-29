@@ -44,7 +44,7 @@
                                         <header id="header">
                                                 <!-- Logo -->
                                                 <div id="logo">
-                                                        <h1><a href="<?= base_url() ?>" id="logo">DavAlert</a></h1>
+                                                        <h1><a href="home" id="logo">DavAlert</a></h1>
                                                         <span>
 							<?php
 							if($this->session->userdata('is_logged_in')) echo 'Hi <a href="profile">'.$fname.' '.$lname.'</a>!';
